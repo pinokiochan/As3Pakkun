@@ -1,5 +1,5 @@
 public class MyHashTable<K, V> {
-    private class HashNode<K, V> {
+    class HashNode<K, V> {
        private K key;
        private V value;
        private HashNode<K, V> next;
@@ -8,6 +8,9 @@ public class MyHashTable<K, V> {
            this.value = value;
 
        }
+       public HashNode<K, V> getNext() {
+            return next;
+        }
        @Override
         public String toString(){
            return  "{" + key + " " + value + "}";
@@ -15,6 +18,7 @@ public class MyHashTable<K, V> {
     }
 
     private HashNode<K, V>[] chainArray;
+
     private int M = 11;
 
     private int size;
